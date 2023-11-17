@@ -1,5 +1,302 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--main-font-family, 'Courier New', Courier, monospace);
+  font-size: var(--main-font-size, 18px);
+  line-height: var(--main-line-height);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--text-color);
+
+  background-color: var(--bg-color, gray);
+  background-image: url(../images/cover-image-dark.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  min-block-size: 668px;
+  block-size: 100vb;
+  padding: var(--indent, 10px);
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  position: absolute;
+
+  content: "";
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::before {
+  inset-block-end: var(--indent, 10px);
+  inset-inline-start: var(--indent, 10px);
+
+  border-block-end: 1px solid var(--accent-color-secondary);
+  border-inline-start: 1px solid var(--accent-color-secondary);
+}
+
+.decorated-zone::after {
+  inset-block-start: var(--indent, 10px);
+  inset-inline-end: var(--indent, 10px);
+
+  border-block-start: 1px solid var(--accent-color-secondary);
+  border-inline-end: 1px solid var(--accent-color-secondary);
+}
+
+.header__decor {
+  position: absolute;
+  inset-inline-end: 39px;
+  inset-block-start: 11px;
+
+  color: var(--accent-color);
+  font: inherit;
+  line-height: 138%;
+  text-transform: uppercase;
+}
+
+.header__decor::after {
+  position: absolute;
+  inset-inline-end: -20px;
+  inset-block-start: 9px;
+
+  display: block;
+  content: "";
+
+  inline-size: 7px;
+  block-size: 7px;
+  border-radius: 50%;
+
+  background-color: var(--accent-color);
+
+  box-shadow: 0 0 3px 3px var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  color: var(--accent-color-secondary);
+  font: inherit;
+}
+
+.header__theme-menu-button {
+  padding: 0 12px;
+
+  text-transform: lowercase;
+
+  background-color: transparent;
+
+  cursor: pointer;
+  appearance: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-outline-hover);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid currentColor;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+
+  outline: 1px solid var(--accent-color-secondary);
+}
+
+.header__title {
+  color: var(--header-title);
+  font-family: inherit;
+  font-size: var(--logo-size);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  text-shadow: 4px 4px 0px var(--accent-color-logo);
+}
+
+.header__description {
+  justify-self: end;
+  align-self: center;
+  max-block-size: 117px;
+  inline-size: 355px;
+}
+
+.title-decor {
+  color: var(--bg-color);
+  font: inherit;
+  font-weight: 700;
+
+  background-color: var(--accent-color);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--indent-m, 50px);
+  padding: var(--indent-s, 40px) var(--indent, 10px);
+}
+
+.section,
+.section__content {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  font: inherit;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.section__subtitle {
+  font-size: 18px;
+}
+
+.section__caption {
+  font-weight: 400;
+}
+
+.section__paragraph {
+  padding-block-start: 10px;
+}
+
+.section__link {
+  text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
+
+  cursor: pointer;
+}
+
+.section__link:hover {
+  border-block-end: 1px solid currentColor;
+}
+
+.section__link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.section__pictures {
+  gap: var(--indent, 10px);
+}
+
+.section__image {
+  inline-size: 100%;
+  block-size: auto;
+}
+
+.footer {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-block-size: 668px;
+  block-size: 100vb;
+  padding: var(--indent, 10px);
+}
+
+.footer__title {
+  color: var(--header-title);
+  font-family: inherit;
+  font-size: var(--logo-size);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  text-shadow: 2px 2px 0px var(--accent-color-logo);
+}
+
+@media (width >=768px) {
+  .header__decor {
+    inset-inline-end: 49px;
+    inset-block-start: 21px;
+  }
+
+  .header__title {
+    position: relative;
+    inset-inline-start: -20px;
+  }
+
+  .header__description {
+    inline-size: max(364px, 47.4vi);
+  }
+
+  .why,
+  .how__to {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .what .section__title {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section__pictures {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto min(192px, 26vi) min(230px, 31vi) min(318px, 42vi);
+  }
+
+  .section__pictures .section__subtitle {
+    grid-column-end: span 3;
+  }
+
+  .section__image {
+    block-size: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section__image:first-of-type,
+  .section__image:last-of-type {
+    grid-column-end: span 2;
+  }
+
+  .section__image:nth-of-type(2),
+  .section__image:nth-of-type(3) {
+    grid-row-end: span 2;
+  }
+}
+
+@media (width >=1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__description {
+    inline-size: max(491px, 47.4vi);
+  }
+
+  .why,
+  .how__to {
+    gap: 10px;
+  }
+
+  .what .section__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section__pictures {
+    grid-template-rows: auto min(260px, 26vi) min(315px, 31vi) min(428px, 42vi);
+  }
 }
