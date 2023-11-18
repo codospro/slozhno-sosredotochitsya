@@ -134,7 +134,7 @@
   justify-self: end;
   align-self: center;
   max-block-size: 117px;
-  min-inline-size: 355px;
+  max-inline-size: 355px;
 }
 
 .title-decor {
