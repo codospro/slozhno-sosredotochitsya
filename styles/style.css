@@ -76,7 +76,7 @@
 
   background-color: var(--accent-color);
 
-  box-shadow: 0 0 3px 3px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
 }
 
 .header__theme-menu {
@@ -134,7 +134,7 @@
   justify-self: end;
   align-self: center;
   max-block-size: 117px;
-  inline-size: 355px;
+  min-inline-size: 355px;
 }
 
 .title-decor {
