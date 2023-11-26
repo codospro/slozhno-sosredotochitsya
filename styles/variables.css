@@ -3,22 +3,22 @@
   --indent-s: 40px;
   --indent-m: 50px;
 
-  --accent-color-logo: #FF0070;
+  --accent-color-logo: #ff0070;
   --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  --main-font-family: IBM Plex Mono, monospace;
+  --main-font-family: ibm plex mono, monospace;
   --main-font-size: 18px;
   --main-line-height: 130%;
 
-
-  --header-title: #DB00FF;
-  --text-color: #F1B2CE;
+  --header-title: #db00ff;
+  --text-color: #f1b2ce;
   --bg-color: #000028;
-  --accent-color: #FF0070;
-  --accent-color-secondary: #FF0070;
-  --button-outline-hover: rgba(255, 0, 112, 0.40);
+  --accent-color: #ff0070;
+  --accent-color-secondary: #ff0070;
+  --button-outline-hover: rgb(255 0 112 / 0.4);
 }
 
 @media (width >=768px) {
+
   :root {
     --indent: 20px;
     --indent-s: 60px;

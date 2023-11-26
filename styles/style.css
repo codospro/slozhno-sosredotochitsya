@@ -30,7 +30,7 @@
 .decorated-zone::after {
   position: absolute;
 
-  content: "";
+  content: '';
   inline-size: 25px;
   block-size: 25px;
 }
@@ -68,7 +68,7 @@
   inset-block-start: 9px;
 
   display: block;
-  content: "";
+  content: '';
 
   inline-size: 7px;
   block-size: 7px;
@@ -127,7 +127,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%;
-  text-shadow: 4px 4px 0px var(--accent-color-logo);
+  text-shadow: 4px 4px 0 var(--accent-color-logo);
 }
 
 .header__description {
@@ -218,10 +218,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: 82.5%;
-  text-shadow: 2px 2px 0px var(--accent-color-logo);
+  text-shadow: 2px 2px 0 var(--accent-color-logo);
 }
 
 @media (width >=768px) {
+
   .header__decor {
     inset-inline-end: 49px;
     inset-block-start: 21px;
@@ -274,6 +275,7 @@
 }
 
 @media (width >=1024px) {
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
